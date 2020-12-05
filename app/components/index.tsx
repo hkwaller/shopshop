@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colours } from 'app/utils'
+import { colors } from 'app/utils'
 
 export const HeaderText = styled.Text`
   font-size: 38px;
@@ -8,7 +8,17 @@ export const HeaderText = styled.Text`
 
 export const Subtitle = styled.Text`
   font-size: 14px;
-  color: colours.grey;
+  color: #949494;
+`
+
+export const H2 = styled.Text`
+  font-size: 28px;
+  font-weight: 600;
+`
+
+export const Bold = styled.Text`
+  font-size: 18px;
+  font-weight: 800;
 `
 
 export { default as Screen } from './Screen'

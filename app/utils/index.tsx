@@ -7,3 +7,10 @@ export const colors = {
   yellow: '#FFF3D6',
   lightYellow: '#FFF8E8',
 }
+
+export const spacing = {
+  sm: 6,
+  md: 12,
+  lg: 18,
+  xl: 24,
+}
