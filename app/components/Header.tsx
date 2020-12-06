@@ -14,7 +14,7 @@ function Header() {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: spacing.lg,
+    marginVertical: spacing.lg,
   },
 })
 

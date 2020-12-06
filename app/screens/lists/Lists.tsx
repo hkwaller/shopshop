@@ -1,31 +1,27 @@
 import React, { useEffect, useState } from 'react'
+import { view } from '@risingstack/react-easy-state'
 import { Screen } from 'app/components'
 import { getLists } from 'app/utils/api'
-import { Category, List as ListType } from '../../utils/types'
 import ListPreview from './components/ListPreview'
 import List from './components/List'
+import { state } from 'app/utils/store'
 
-type Props = {}
-
-function Lists(props: Props) {
-  const [lists, setLists] = useState<ListType[]>([])
-
+function Lists() {
   useEffect(() => {
     async function get() {
-      const lists = await getLists()
-      setLists(lists)
+      await getLists()
     }
-
     get()
   }, [])
 
+  console.log('state.lists: ', state.lists)
   return (
     <Screen>
-      {lists.map((list) => {
-        return <ListPreview list={list} />
+      {state.lists.map((list, index) => {
+        return <ListPreview key={index} list={list} />
       })}
-      {lists.length === 1 && <List products={lists[0].products} />}
+      {state.lists.length === 1 && <List products={state.lists[0].products} />}
     </Screen>
   )
 }
-export default Lists
+export default view(Lists)

@@ -15,6 +15,7 @@
     "sanity"
   ],
   "dependencies": {
+    "@risingstack/react-easy-state": "^6.3.0",
     "@sanity/base": "^2.0.9",
     "@sanity/components": "^2.0.9",
     "@sanity/core": "^2.0.9",

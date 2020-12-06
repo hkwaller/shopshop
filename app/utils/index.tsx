@@ -6,6 +6,7 @@ export const colors = {
   lightRed: '#FFEFF0',
   yellow: '#FFF3D6',
   lightYellow: '#FFF8E8',
+  black: '#2b2b2c',
 }
 
 export const spacing = {

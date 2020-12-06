@@ -6,7 +6,7 @@ import { spacing } from '../utils'
 import Header from './Header'
 
 type Props = {
-  children: React.ReactChildren
+  children: React.ReactNode
 }
 
 function Screen({ children }: Props) {

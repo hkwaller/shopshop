@@ -19,6 +19,11 @@ export default {
       title: 'Sort Order',
       type: 'number',
     },
+    {
+      name: 'checked',
+      title: 'Checked',
+      type: 'boolean',
+    },
   ],
   preview: {
     select: {

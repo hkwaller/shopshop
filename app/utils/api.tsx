@@ -1,6 +1,6 @@
 import { token } from '../../token'
 import { Category, List } from './types'
-
+import { state } from 'app/utils/store'
 const sanityClient = require('@sanity/client')
 
 const client = sanityClient({
@@ -12,6 +12,7 @@ const client = sanityClient({
 
 export async function getLists() {
   const query = `*[_type == "list"]`
+
   const categoryQuery = `*[_type == "category"]`
   const categories = await client
     .fetch(categoryQuery)
@@ -19,8 +20,8 @@ export async function getLists() {
       return categories
     })
 
-  return await client.fetch(query).then((lists: List[]) => {
-    return lists.map((list) => {
+  await client.fetch(query).then((lists: List[]) => {
+    const parsedLists = lists.map((list) => {
       const products = list.products.map((product) => {
         return {
           ...product,
@@ -29,8 +30,9 @@ export async function getLists() {
           )[0],
         }
       })
-
       return { ...list, products: products }
     })
+
+    state.lists = parsedLists
   })
 }

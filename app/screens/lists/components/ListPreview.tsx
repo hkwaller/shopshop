@@ -1,7 +1,8 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { List } from '../../../utils/types'
-import { H2 } from '../../../components'
+import { List } from 'app/utils/types'
+import { H2 } from 'app/components'
+import { spacing } from 'app/utils'
 
 type Props = {
   list: List
@@ -22,6 +23,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     alignItems: 'center',
+    marginBottom: spacing.lg,
   },
 })
 
